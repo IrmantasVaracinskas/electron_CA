@@ -2,7 +2,7 @@ let board;
 
 function setup() {
     createCanvas(800, 600);
-    ConfigurationLoader.loadConfiguration("C:\\Users\\irmis\\Desktop\\electron\\CA\\test.xml")
+    ConfigurationLoader.loadConfiguration("C:\\Users\\irmis\\Desktop\\electron\\CA\\test2.xml")
     board = new Board(10, 10, 10);
 }
 

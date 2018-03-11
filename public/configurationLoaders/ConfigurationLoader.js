@@ -1,8 +1,6 @@
 class ConfigurationLoader {
     static loadConfiguration(_fileName) {
-        console.log("TESTING");
-        let rootXml = loadXML(_fileName, this.loadMain, (response) => { console.log("ERROR loading xml!", response); });
-        //let type = rootXml.getChild("type");
+    	loadXML(_fileName, this.loadMain, (response) => { console.log("ERROR loading xml!", response); });
     }
 
     static loadMain(rootXml) {
@@ -28,5 +26,16 @@ class ConfigurationLoader {
         }
 
         DisplayConfigurationLoader.loadDisplay(rootXml);
+
+        switch(Config.getType())
+        {
+        	case "life":
+        		LifeLoader.loadLife(rootXml);
+        	break;
+        	default:
+        		console.log("No type: ", Config.getType());
+        }
+
+        InitialStateLoader.loadInitialState(rootXml);
     }
 }

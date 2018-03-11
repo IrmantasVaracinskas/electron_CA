@@ -1,0 +1,7 @@
+class NeumanLifeLoader
+{
+	loadNeumanLife(ruleXml)
+	{
+		
+	}
+}
